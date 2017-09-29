@@ -1,0 +1,30 @@
+{
+  "name": "orelang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "find -E . -regex './app/.+\\.(js)$' -type f | xargs rm && rm -rf ./build",
+    "pretest": "tsc",
+    "test": "mocha test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syo-ss/orelang.git"
+  },
+  "author": "syo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/syo-ss/orelang/issues"
+  },
+  "homepage": "https://github.com/syo-ss/orelang#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.43",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.5.3",
+    "power-assert": "^1.4.4"
+  }
+}

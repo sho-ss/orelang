@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2015",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "listFiles": false,
+        "removeComments": true,
+        "declaration": false,
+        "sourceMap": false
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "exclude": [
+        ".git",
+        "doc",
+        "lib",
+        "node_modules"
+    ]
+}
