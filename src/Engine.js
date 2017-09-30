@@ -10,6 +10,11 @@ const SetOperator_1 = require("./operator/SetOperator");
 const StepOperator_1 = require("./operator/StepOperator");
 const UntilOperator_1 = require("./operator/UntilOperator");
 const IfOperator_1 = require("./operator/IfOperator");
+const ComparisonOperators_1 = require("./operator/ComparisonOperators");
+const LogicOperators_1 = require("./operator/LogicOperators");
+const PrintOperator_1 = require("./operator/PrintOperator");
+const SubtractionOperator_1 = require("./operator/SubtractionOperator");
+const DivOperators_1 = require("./operator/DivOperators");
 class Engine {
     constructor() {
         this.operators = {};
@@ -22,6 +27,17 @@ class Engine {
         this.operators['until'] = new UntilOperator_1.UntilOperator();
         this.operators['step'] = new StepOperator_1.StepOperator();
         this.operators['if'] = new IfOperator_1.IfOperator();
+        this.operators['>'] = new ComparisonOperators_1.LtOperator();
+        this.operators['<'] = new ComparisonOperators_1.StOperator();
+        this.operators['>='] = new ComparisonOperators_1.LeOperator();
+        this.operators['<='] = new ComparisonOperators_1.SeOperator();
+        this.operators['!'] = new LogicOperators_1.NotOperator();
+        this.operators['||'] = new LogicOperators_1.OrOperator();
+        this.operators['&&'] = new LogicOperators_1.AndOperator();
+        this.operators['print'] = new PrintOperator_1.PrintOperator();
+        this.operators['-'] = new SubtractionOperator_1.SubtractionOperator();
+        this.operators['/'] = new DivOperators_1.QuotOperator();
+        this.operators['%'] = new DivOperators_1.ModOperator();
     }
     eval(script) {
         return this.getExpression(script).eval(this);

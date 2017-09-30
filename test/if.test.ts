@@ -1,7 +1,6 @@
 import 'mocha'
 import * as assert from 'power-assert'
 import { Engine } from '../src/Engine'
-import { IfOperator } from '../src/operator/IfOperator'
 
 
 describe('IfOperator Test', () => {

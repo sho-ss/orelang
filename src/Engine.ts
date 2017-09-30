@@ -11,6 +11,23 @@ import { SetOperator } from './operator/SetOperator'
 import { StepOperator } from './operator/StepOperator'
 import { UntilOperator } from './operator/UntilOperator'
 import { IfOperator } from './operator/IfOperator'
+import {
+  LtOperator,
+  StOperator,
+  LeOperator,
+  SeOperator,
+} from './operator/ComparisonOperators'
+import {
+  NotOperator,
+  OrOperator,
+  AndOperator,
+} from './operator/LogicOperators'
+import { PrintOperator } from './operator/PrintOperator'
+import { SubtractionOperator } from './operator/SubtractionOperator'
+import {
+  QuotOperator,
+  ModOperator,
+} from './operator/DivOperators'
 
 /**
  * script engine of orelang
@@ -33,7 +50,17 @@ export class Engine{
     this.operators['until'] = new UntilOperator()
     this.operators['step'] = new StepOperator()
     this.operators['if'] = new IfOperator()
-
+    this.operators['>'] = new LtOperator()
+    this.operators['<'] = new StOperator()
+    this.operators['>='] = new LeOperator()
+    this.operators['<='] = new SeOperator()
+    this.operators['!'] = new NotOperator()
+    this.operators['||'] = new OrOperator()
+    this.operators['&&'] = new AndOperator()
+    this.operators['print'] = new PrintOperator()
+    this.operators['-'] = new SubtractionOperator()
+    this.operators['/'] = new QuotOperator()
+    this.operators['%'] = new ModOperator()
   }
 
   public eval(script: Object): Object {

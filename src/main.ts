@@ -2,7 +2,7 @@ import { Engine } from './Engine'
 
 let engine: Engine = new Engine()
 
-let x = engine.eval(['if', ['=', 2, 1], 'true', 'false'])
+let x = engine.eval(['print', 'this', 'message', 'is', 'test', 'message.'])
 console.log(x)
 /*
 let y = engine.eval(
